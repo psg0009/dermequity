@@ -228,11 +228,12 @@ class TestSyntheticLABAugmentation:
         
         assert augmented.shape == image.shape
     
-    def test_create_variants(self):
+    def test_generate_variants(self):
+        """Test generate_variants method (FIXED: was create_variants)"""
         aug = SyntheticLABAugmentation()
         image = np.random.randint(0, 255, (224, 224, 3), dtype=np.uint8)
         
-        variants = aug.create_variants(image, n_variants=5)
+        variants = aug.generate_variants(image, n_variants=5)
         
         assert len(variants) == 5
         for img, shift in variants:
@@ -278,11 +279,13 @@ class TestUncertaintyEstimator:
     """Test MC Dropout uncertainty estimation."""
     
     def test_estimator_initialization(self, mock_model):
-        estimator = UncertaintyEstimator(mock_model, n_passes=5, device='cpu')
-        assert estimator.n_passes == 5
+        """Test initialization (FIXED: n_passes -> n_forward_passes)"""
+        estimator = UncertaintyEstimator(mock_model, n_forward_passes=5, device='cpu')
+        assert estimator.n_forward_passes == 5
     
     def test_estimate_runs(self, mock_model, mock_loader):
-        estimator = UncertaintyEstimator(mock_model, n_passes=3, device='cpu')
+        """Test estimate method (FIXED: n_passes -> n_forward_passes)"""
+        estimator = UncertaintyEstimator(mock_model, n_forward_passes=3, device='cpu')
         results = estimator.estimate(mock_loader)
         
         assert results is not None
@@ -299,11 +302,20 @@ class TestSelectivePredictor:
     """Test selective prediction with deferral."""
     
     def test_predictor_initialization(self, mock_model):
-        predictor = SelectivePredictor(mock_model, device='cpu', n_mc_passes=3)
+        """Test initialization (FIXED: removed n_mc_passes, use uncertainty_estimator)"""
+        predictor = SelectivePredictor(mock_model, device='cpu')
         assert predictor is not None
     
+    def test_predictor_with_uncertainty_estimator(self, mock_model):
+        """Test initialization with uncertainty estimator"""
+        estimator = UncertaintyEstimator(mock_model, n_forward_passes=3, device='cpu')
+        predictor = SelectivePredictor(mock_model, uncertainty_estimator=estimator, device='cpu')
+        assert predictor is not None
+        assert predictor.uncertainty_estimator is not None
+    
     def test_evaluate_thresholds(self, mock_model, mock_loader):
-        predictor = SelectivePredictor(mock_model, device='cpu', n_mc_passes=3)
+        """Test threshold evaluation (FIXED: removed n_mc_passes)"""
+        predictor = SelectivePredictor(mock_model, device='cpu')
         
         threshold_df = predictor.evaluate_thresholds(
             mock_loader,
