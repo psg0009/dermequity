@@ -49,7 +49,7 @@ Our research uncovered critical bias patterns:
 
 ```bash
 # Clone the repository
-git clone https://github.com/pgosar/dermequity.git
+git clone https://github.com/psg0009/dermequity.git
 cd dermequity
 
 # Install dependencies
