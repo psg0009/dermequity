@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use DermEquity in your research, please cite it as below."
+type: software
+title: "DermEquity: Fairness Auditing Toolkit for Dermatological AI Systems"
+version: 2.0.0
+date-released: 2026-03-29
+license: MIT
+repository-code: "https://github.com/psg0009/dermequity"
+url: "https://github.com/psg0009/dermequity"
+abstract: >-
+  DermEquity is a comprehensive framework for auditing and mitigating 
+  skin tone bias in dermatological AI systems. It provides tools to 
+  measure performance disparities across Fitzpatrick skin types (I-VI) 
+  and implement evidence-based mitigation strategies. Key findings include 
+  0% sensitivity on darkest skin (FST VI), bias scaling with condition 
+  severity (26% to 75% gap), and 35.1% prediction flip rate under 
+  counterfactual skin tone modification. The toolkit achieves 68% gap 
+  reduction using synthetic LAB augmentation.
+authors:
+  - family-names: "Gosar"
+    given-names: "Parth"
+    email: "gosar@usc.edu"
+
+keywords:
+  - fairness
+  - bias
+  - dermatology
+  - skin cancer
+  - machine learning
+  - deep learning
+  - healthcare AI
+  - algorithmic fairness
+  - Fitzpatrick skin type
+  - explainability
+  - computer vision
+  - medical imaging
+references:
+  - type: conference-paper
+    authors:
+      - family-names: "Gosar"
+        given-names: "Parth"
+    title: "DermEquity: Auditing and Mitigating Skin Tone Bias in Dermatological AI Systems"
+    conference:
+      name: "ShowCAIS 2026: USC Center for AI in Society Symposium"
+    year: 2026
+    notes: "Top Abstract Submission"

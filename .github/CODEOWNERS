@@ -1,0 +1,20 @@
+# DermEquity Code Owners
+# This file defines who must review PRs for different parts of the codebase
+
+# Default: You review all changes
+* @psg0009
+
+# Core module - requires your review
+/dermequity/ @psg0009
+
+# Tests
+/tests/ @psg0009
+
+# Documentation
+/docs/ @psg0009
+*.md @psg0009
+
+# CI/CD and config
+/.github/ @psg0009
+setup.py @psg0009
+requirements.txt @psg0009
