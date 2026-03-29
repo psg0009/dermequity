@@ -308,5 +308,3 @@ MIT License — see [LICENSE](LICENSE) for details.
 - ShowCAIS 2026 organizers and reviewers
 
 ---
-
-**Built with ❤️ at USC Viterbi School of Engineering**
