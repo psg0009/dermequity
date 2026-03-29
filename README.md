@@ -2,6 +2,7 @@
 
 **Fairness Auditing & Bias Mitigation Toolkit for Dermatological AI**
 
+[![PyPI version](https://badge.fury.io/py/dermequity.svg)](https://pypi.org/project/dermequity/)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![ShowCAIS 2026](https://img.shields.io/badge/ShowCAIS-2026_Top_Abstract-green.svg)](https://sites.google.com/usc.edu/showcais2026)
@@ -47,15 +48,17 @@ Our research uncovered critical bias patterns:
 
 ## 📦 Installation
 
+### From PyPI (Recommended)
+
 ```bash
-# Clone the repository
+pip install dermequity
+```
+
+### From Source
+
+```bash
 git clone https://github.com/psg0009/dermequity.git
 cd dermequity
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Install the package
 pip install -e .
 ```
 
@@ -63,13 +66,7 @@ pip install -e .
 
 - Python 3.8+
 - PyTorch 1.9+
-- torchvision
-- OpenCV (cv2)
-- scikit-learn
-- pandas
-- matplotlib
-- numpy
-- Pillow
+- torchvision, OpenCV, scikit-learn, pandas, matplotlib, Pillow
 
 ---
 
