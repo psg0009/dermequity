@@ -1,0 +1,168 @@
+{
+  "metadata": {
+    "author": "Parth Gosar",
+    "institution": "USC Thomas Lord Dept of Computer Science",
+    "date": "2026-03-25",
+    "project": "DermEquity: Auditing and Mitigating Skin Tone Bias in Dermatological AI"
+  },
+  "mitigation_strategies": {
+    "baseline": {
+      "overall": {
+        "accuracy": 0.7989690721649485,
+        "sensitivity": 0.48148148148148145,
+        "specificity": 0.8502994011976048,
+        "ppv": 0.34210526315789475,
+        "f1": 0.4,
+        "auc": 0.6974939010867154
+      },
+      "gaps": {
+        "accuracy": 0.4285714285714286,
+        "sensitivity": 1.0,
+        "specificity": 0.4,
+        "ppv": 1.0,
+        "f1": 1.0,
+        "auc": 0.6206896551724138
+      }
+    },
+    "balanced": {
+      "overall": {
+        "accuracy": 0.8092783505154639,
+        "sensitivity": 0.4074074074074074,
+        "specificity": 0.874251497005988,
+        "ppv": 0.34375,
+        "f1": 0.3728813559322034,
+        "auc": 0.7045908183632735
+      },
+      "gaps": {
+        "accuracy": 0.3476190476190476,
+        "sensitivity": 1.0,
+        "specificity": 0.2941176470588235,
+        "ppv": 0.6666666666666666,
+        "f1": 0.8,
+        "auc": 0.5896551724137932
+      }
+    },
+    "skinaware": {
+      "overall": {
+        "accuracy": 0.8762886597938144,
+        "sensitivity": 0.5925925925925926,
+        "specificity": 0.9221556886227545,
+        "ppv": 0.5517241379310345,
+        "f1": 0.5714285714285714,
+        "auc": 0.8343313373253494
+      },
+      "gaps": {
+        "accuracy": 0.2523809523809524,
+        "sensitivity": 0.875,
+        "specificity": 0.19999999999999996,
+        "ppv": 0.7777777777777778,
+        "f1": 0.8235294117647058,
+        "auc": 0.3847233360064153
+      }
+    },
+    "ensemble": {
+      "overall": {
+        "accuracy": 0.7835051546391752,
+        "sensitivity": 0.2962962962962963,
+        "specificity": 0.8622754491017964,
+        "ppv": 0.25806451612903225,
+        "f1": 0.27586206896551724,
+        "auc": 0.6877356398314481
+      },
+      "gaps": {
+        "accuracy": 0.19047619047619047,
+        "sensitivity": 1.0,
+        "specificity": 0.20109439124486994,
+        "ppv": 0.6666666666666666,
+        "f1": 0.8,
+        "auc": 0.4232558139534884
+      }
+    },
+    "augmented": {
+      "overall": {
+        "accuracy": 0.8556701030927835,
+        "sensitivity": 0.48148148148148145,
+        "specificity": 0.9161676646706587,
+        "ppv": 0.48148148148148145,
+        "f1": 0.48148148148148145,
+        "auc": 0.8367709026391661
+      },
+      "gaps": {
+        "accuracy": 0.13846153846153852,
+        "sensitivity": 0.75,
+        "specificity": 0.125,
+        "ppv": 1.0,
+        "f1": 0.75,
+        "auc": 0.4137931034482758
+      }
+    }
+  },
+  "multiclass_analysis": [
+    {
+      "Condition": "Non-neoplastic",
+      "Severity": "Low",
+      "Sens Gap": "25.6%",
+      "Min Sens": "74.4%",
+      "Max Sens": "100.0%"
+    },
+    {
+      "Condition": "Benign",
+      "Severity": "Medium",
+      "Sens Gap": "40.0%",
+      "Min Sens": "0.0%",
+      "Max Sens": "40.0%"
+    },
+    {
+      "Condition": "Malignant",
+      "Severity": "HIGH",
+      "Sens Gap": "75.0%",
+      "Min Sens": "0.0%",
+      "Max Sens": "75.0%"
+    }
+  ],
+  "cross_dataset_ddi": {
+    "ddi_overall": {
+      "accuracy": 0.6814024390243902,
+      "sensitivity": 0.2573099415204678,
+      "specificity": 0.8309278350515464,
+      "ppv": 0.3492063492063492,
+      "f1": 0.2962962962962963,
+      "auc": 0.577994815216736
+    },
+    "ddi_by_skintone": {
+      "12": {
+        "n_samples": 208,
+        "accuracy": 0.6346153846153846,
+        "sensitivity": 0.24489795918367346,
+        "specificity": 0.7547169811320755,
+        "ppv": 0.23529411764705882,
+        "f1": 0.24,
+        "auc": 0.542164035425491
+      },
+      "34": {
+        "n_samples": 241,
+        "accuracy": 0.7344398340248963,
+        "sensitivity": 0.2972972972972973,
+        "specificity": 0.9281437125748503,
+        "ppv": 0.6470588235294118,
+        "f1": 0.4074074074074074,
+        "auc": 0.6522090953228679
+      },
+      "56": {
+        "n_samples": 207,
+        "accuracy": 0.6666666666666666,
+        "sensitivity": 0.20833333333333334,
+        "specificity": 0.8050314465408805,
+        "ppv": 0.24390243902439024,
+        "f1": 0.2247191011235955,
+        "auc": 0.535377358490566
+      }
+    }
+  },
+  "key_findings": {
+    "accuracy_gap_reduction": "68%",
+    "specificity_gap_reduction": "69%",
+    "generalization_gap_accuracy": "11.8%",
+    "generalization_gap_sensitivity": "22.4%"
+  }
+}
