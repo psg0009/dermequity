@@ -213,6 +213,6 @@ def compute_equity_gap(metrics_by_group: Dict[int, float]) -> EquityGap:
 ## Questions?
 
 - Open an issue with `[Question]` prefix
-- Email: pgosar@usc.edu
+- Email: gosar@usc.edu
 
 Thank you for contributing to fairer healthcare AI! 🩺
